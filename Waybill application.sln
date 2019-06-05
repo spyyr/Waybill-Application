@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0769D9E-6D15-4768-9426-40B142117A61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp2", "Waybill\WpfApp2.csproj", "{056F8C9F-3EAA-44F2-966D-F393288AEB59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waybill application", "Waybill\Waybill application.csproj", "{056F8C9F-3EAA-44F2-966D-F393288AEB59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
