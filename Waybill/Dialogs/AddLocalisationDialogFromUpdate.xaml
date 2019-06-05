@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp2.CustomDialogs.AddLocalisationDialogFromUpdate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Dodaj lokalizację" Height="238.011" Width="357.016" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="296*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="city"  HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Miasto&#x9;&#x9;" VerticalAlignment="Top" Width="169" Margin="10,95,0,0"  Grid.ColumnSpan="2"/>
+        <TextBox Name="zipCode" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Kod pocztowy&#xD;&#xA;" VerticalAlignment="Top" Width="169" Margin="10,142,0,0" Grid.ColumnSpan="2"/>
+        <Label Name="streetOfLocalisationLabel" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="80" Width="331" MaxWidth=" 1000" Grid.ColumnSpan="2">
+            <TextBlock x:Name="streetOfLocalisationTextBlock" TextWrapping="Wrap" Height="70" Width="321"/>
+        </Label>
+        <Button Content="Dodaj" Grid.Column="1" Margin="199,154,22,21" Click="AddLocalisation_Click"/>
+    </Grid>
+</Window>

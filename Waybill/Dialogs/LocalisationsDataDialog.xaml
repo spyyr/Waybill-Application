@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:WpfApp2="clr-namespace:WpfApp2" x:Class="WpfApp2.Dialogs.LocalisationsDataDialog"
+        mc:Ignorable="d"
+        Title="Lokalizacje" Height="450" Width="800" Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        >
+
+    <Window.Resources>
+        <WpfApp2:FormatkaDataSet x:Key="formatkaDataSet"/>
+        <CollectionViewSource x:Key="localisationsViewSource" Source="{Binding Localisations, Source={StaticResource formatkaDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource localisationsViewSource}">
+
+        <DataGrid x:Name="localisationsDataGrid" Background="LightGray" MinColumnWidth="184"  RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,10,69" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" CanUserAddRows="false" CanUserDeleteRows="false" IsReadOnly="true" CanUserSortColumns="True"   >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="localisationIDColumn" Width="SizeToHeader" IsReadOnly="True" Header="Localisation ID"  Binding="{Binding LocalisationID}" />
+                <DataGridTextColumn x:Name="streetColumn" Width="SizeToHeader" Header="Street" Binding="{Binding Street}"/>
+                <DataGridTextColumn x:Name="cityColumn" Width="SizeToHeader" Header="City" Binding="{Binding City}"/>
+                <DataGridTextColumn x:Name="zipCodeColumn" Width="SizeToHeader" Header="Zip Code" Binding="{Binding ZipCode}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="Add" Content="Dodaj lokalizację" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="95" Click="AddLocalisation_Click"/>
+        <Button Name="Edit" Content="Edytuj lokalizację" HorizontalAlignment="Left" Margin="120,376,0,0" VerticalAlignment="Top" Width="95" Click="EditLocalisation_Click"/>
+        <Button Name="Delete" Content="Usuń lokalizację" HorizontalAlignment="Left" Margin="230,376,0,0" VerticalAlignment="Top" Width="95" Click="DeleteLocalisation_Click"/>
+        <Button Name="Update" Content="Zaktualizuj z pliku" HorizontalAlignment="Left" Margin="340,376,0,0" VerticalAlignment="Top" Width="100" Click="UpdateLocalisations_Click"/>
+
+    </Grid>
+</Window>
